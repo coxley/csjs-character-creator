@@ -1,12 +1,11 @@
 .characterEditor {
   padding-top: 128px;
   padding-bottom: 64px;
-}
-
-.maxWidthWrapper {
+  isolation: isolate;
 }
 
 .header {
+  width: 65%;
   padding-bottom: 64px;
 }
 
@@ -23,8 +22,32 @@
   margin: 0;
 }
 
-.characterWrapper {
+@media only screen and (min-width: 1000px) {
+  .characterWrapper {
+    min-height: 500px;
+    position: fixed;
+    top: 128px;
+    right: calc(35% - 318px);
+  }
 }
 
-.controlColumn {
+@media only screen and (max-width: 1000px) {
+  .characterWrapper {
+    z-index: -1;
+    position: fixed;
+    top: 200px;
+    left: 5px;
+  }
+  .controlColumn {
+    display: flex;
+  }
+  .maxWidthWrapper {
+    max-width: 85vw;
+    overflow: scroll;
+  }
+  .header {
+    position: sticky;
+    left: 0;
+    visibility: hidden;
+  }
 }

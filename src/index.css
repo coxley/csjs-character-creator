@@ -5,9 +5,25 @@ body,
 }
 
 body {
-  background-color: hsl(180deg, 25%, 92%);
+  background-color: hsl(195deg, 20%, 86%);
   margin: 0;
 }
+
+/*
+Relies on isolation: isolate to be set on CharacterEditor
+
+This also swaps background colors with the body so we can
+avoid setting z-index and rely on DOM order.
+
+*/
+#colorBar {
+  position: sticky;
+  top: 0;
+  height: 60vh;
+  margin-bottom: -60vh;
+  background-color: hsl(180deg, 25%, 92%);
+}
+
 
 *,
 *:before,
